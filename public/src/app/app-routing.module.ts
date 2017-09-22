@@ -15,7 +15,6 @@ const routes: Routes = [
     { path: 'status', component: PlayerStatusComponent, children: [
       { path: 'game/:id', component: GameComponent }
     ]}
-
 ];
 
 @NgModule({

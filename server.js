@@ -6,7 +6,6 @@ app.use(bodyParser.json());
 var path = require('path'); 
 app.use(express.static(path.join(__dirname, '/public/dist')));
 
-
 // require the mongoose configuration file which does the rest for us
 require('./server/config/mongoose.js');
 // Routes now in folder config/server/routes.js
