@@ -1,3 +1,27 @@
-<p>
-  game works!
-</p>
+<div id="table-list-players">
+    <table>
+      <thead>
+        <th class="name-column">Player Name</th>
+        <th class="action-column">Actions</th>
+        <th class="action-column"></th>
+        <th class="action-column"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of players">
+          <td class="name-column">{{ p.name }}</td>
+
+          <td class="action-column" *ngIf="g==='game1'"><button [ngClass]="{'green':p.game1 === 'playing'}" (click)='play(p)'>Playing</button></td>
+          <td class="action-column" *ngIf="g==='game2'"><button [ngClass]="{'green':p.game2 === 'playing'}" (click)='play(p)'>Playing</button></td>
+          <td class="action-column" *ngIf="g==='game3'"><button [ngClass]="{'green':p.game3 === 'playing'}" (click)='play(p)'>Playing</button></td>
+          
+          <td class="action-column" *ngIf="g==='game1'"><button [ngClass]="{'red':p.game1 === 'notplaying'}" (click)='noPlay(p)'>Not Playing</button></td>
+          <td class="action-column" *ngIf="g==='game2'"><button [ngClass]="{'red':p.game2 === 'notplaying'}" (click)='noPlay(p)'>Not Playing</button></td>
+          <td class="action-column" *ngIf="g==='game3'"><button [ngClass]="{'red':p.game3 === 'notplaying'}" (click)='noPlay(p)'>Not Playing</button></td>
+
+          <td class="action-column" *ngIf="g==='game1'"><button [ngClass]="{'yellow':p.game1 === 'undecided'}" (click)='undecided(p)'>Undecided</button></td>
+          <td class="action-column" *ngIf="g==='game2'"><button [ngClass]="{'yellow':p.game2 === 'undecided'}" (click)='undecided(p)'>Undecided</button></td>
+          <td class="action-column" *ngIf="g==='game3'"><button [ngClass]="{'yellow':p.game3 === 'undecided'}" (click)='undecided(p)'>Undecided</button></td>
+      
+        </tbody>
+    </table>
+  </div>

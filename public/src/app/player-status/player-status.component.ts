@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player-status.component.css']
 })
 export class PlayerStatusComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
