@@ -1,4 +1,12 @@
 <div id="form">
   <h1>Add Player</h1>
-  <h2>My form here</h2>
+  <form (submit)="onSubmit()" #f='ngForm'>
+    <label for="name">Player Name: <input type="text" name="name" required minlength="2" [(ngModel)]='player.name' #name='ngModel'></label>
+    <label for="position">Preferred Position: <input type="text" name="position" [(ngModel)]='player.position' #position='ngModel'></label>
+    <button type="submit" [disabled]='f.invalid'>Add</button>
+    <div class="errors" *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div class="errors" *ngIf="name?.errors.required">Name is required.</div>
+      <div class="errors" *ngIf="name?.errors.minlength">Name should be at least 2 characters long.</div>
+    </div>
+  </form>
 </div>

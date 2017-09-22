@@ -1,27 +1,15 @@
 <div id="table-list-players">
-
   <table>
     <thead>
-      <th>Player Name</th>
-      <th>Prefered Position</th>
+      <th class="name-column">Player Name</th>
+      <th class="position-column">Prefered Position</th>
       <th>Actions</th>
     </thead>
     <tbody>
-      <tr>
-        <td>Name</td>
-        <td>Name</td>
-        <td>Name</td>
-      </tr>
-      <tr>
-        <td>Position</td>
-        <td>Position</td>
-        <td>Position</td>
-      </tr>
-      <tr>
-        <td>Delete</td>
-        <td>Delete</td>
-        <td>Delete</td>
-      </tr>
+      <tr *ngFor="let p of players">
+        <td class="name-column">{{ p.name }}</td>
+        <td class="position-column">{{ p.position }}</td>
+        <td class="delete-column"><button (click)='delete(p._id)'>Delete</button></td>
     </tbody>
   </table>
 </div>

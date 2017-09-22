@@ -1,0 +1,28 @@
+#form{
+    border: 1px solid black;
+    padding:1%;
+}
+label{
+    display: inline-block;
+    width: 100%;
+    margin: 1%;
+}
+input{
+    float: right;
+    font-size: 1.2em;
+    width: 60%;
+}
+button{
+    display: inline-block;
+    color: whitesmoke;
+    background-color: #149C20;
+    font-size: 1.2em;
+    width: 20%;
+}
+.errors{
+    color: red;
+    display: inline-block;
+}
+form{
+    font-size: 1.2em;
+}
