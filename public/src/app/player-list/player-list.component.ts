@@ -17,6 +17,12 @@ export class PlayerListComponent implements OnInit {
   ngOnInit() {
   }
 
+  deletePrompt(id){
+    const check = confirm("Are you sure?");
+    if(check){
+      this.delete(id);
+    }
+  }
   delete(id){
     console.log("DELETE rechead with id: ", id);
     this._playerService.deletePlayer(id);

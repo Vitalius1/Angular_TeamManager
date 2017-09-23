@@ -26,8 +26,9 @@ action-column{
 }
 
 button{
-    width: 144.5px;
+    width: 170px;
     font-size: 1.1em;
+    margin: 0 auto;
 }
 .yellow{
     background-color: #FFFE38;

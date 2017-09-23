@@ -39,4 +39,17 @@ module.exports = {
             }
         });
     },
+    update: function (req, res) {
+        Player.findByIdAndUpdate(req.body._id, { $set: { game1: req.body.game1, game2: req.body.game2, game3: req.body.game3 } }, function (err) {
+            if (err) {
+                res.json(err);
+                console.log('something went wrong with updating');
+            } else {
+                Player.find({}, function (err, players) {
+                    console.log('successfully updated a player!');
+                    res.json(players);
+                });
+            }
+        });
+    },
 };

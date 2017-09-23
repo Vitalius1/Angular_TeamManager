@@ -14,6 +14,10 @@ module.exports = function (app) {
         console.log("DELETE /players.json");
         player.delete(req, res);
     });
+    app.put('/players.json', (req, res) => {
+        console.log("PUT /players.json");
+        player.update(req, res);
+    });
 
     app.all("*", (req, res) => {
         res.sendFile(path.resolve("./public/dist/index.html"));

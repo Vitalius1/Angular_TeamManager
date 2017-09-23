@@ -9,7 +9,7 @@
       <tr *ngFor="let p of players">
         <td class="name-column">{{ p.name }}</td>
         <td class="position-column">{{ p.position }}</td>
-        <td class="delete-column"><button (click)='delete(p._id)'>Delete</button></td>
+        <td class="delete-column"><button (click)='deletePrompt(p._id)'>Delete</button></td>
     </tbody>
   </table>
 </div>

@@ -18,18 +18,18 @@ export class GameComponent implements OnInit {
     this._playerService.getAll();
     this._route.paramMap
       .subscribe(params => {
-        if(parseInt(params.get('id')) === 1){
+        if (parseInt(params.get('id')) === 1) {
           this.g = "game1";
           this.title = "Game 1";
-          console.log(this.g);
-        } else if(parseInt(params.get('id')) === 2){
+          this._playerService.titleObserver.next(this.title)
+        } else if (parseInt(params.get('id')) === 2) {
           this.g = "game2";
           this.title = "Game 2";
-          console.log(this.g);
-        } else if(parseInt(params.get('id')) === 3){
+          this._playerService.titleObserver.next(this.title)
+        } else if (parseInt(params.get('id')) === 3) {
           this.g = "game3";
           this.title = "Game 3";
-          console.log(this.g);
+          this._playerService.titleObserver.next(this.title)
         }
       })
   }
@@ -38,20 +38,44 @@ export class GameComponent implements OnInit {
   }
   play(p) {
     console.log(`Player: ${p.name} decided to play`);
-    if(this.g === "game1"){
+    if (this.g === "game1") {
       p.game1 = "playing";
-    } else if(this.g === "game2"){
+      this._playerService.updatePlayer(p);
+    } else if (this.g === "game2") {
       p.game2 = "playing"
-    } else if(this.g === "game3"){
+      this._playerService.updatePlayer(p);
+    } else if (this.g === "game3") {
       p.game3 = "playing"
+      this._playerService.updatePlayer(p);
     }
 
   }
   noPlay(p) {
     console.log(`Player: ${p.name} decided not to play`);
+    if (this.g === "game1") {
+      p.game1 = "notplaying";
+      this._playerService.updatePlayer(p);
+    } else if (this.g === "game2") {
+      p.game2 = "notplaying"
+      this._playerService.updatePlayer(p);
+    } else if (this.g === "game3") {
+      p.game3 = "notplaying"
+      this._playerService.updatePlayer(p);
+    }
   }
+
   undecided(p) {
     console.log(`Player: ${p.name} is undecided`);
+    if (this.g === "game1") {
+      p.game1 = "undecided";
+      this._playerService.updatePlayer(p);
+    } else if (this.g === "game2") {
+      p.game2 = "undecided"
+      this._playerService.updatePlayer(p);
+    } else if (this.g === "game3") {
+      p.game3 = "undecided"
+      this._playerService.updatePlayer(p);
+    }
   }
 
 }

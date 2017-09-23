@@ -1,5 +1,5 @@
 <div id="game">
-    <h1>Player Status - Game 1</h1>
-    <h3 style="text-align:center"><a [routerLink]="['game', 1]">Game 1</a> | <a [routerLink]="['game', 2]">Game 2</a> | <a [routerLink]="['game', 3]">Game 3</a></h3>
+    <h1>Player Status - {{ title }}</h1>
+    <h2 style="text-align:center"><a [routerLink]="['game', 1]">Game 1</a> | <a [routerLink]="['game', 2]">Game 2</a> | <a [routerLink]="['game', 3]">Game 3</a></h2>
     <router-outlet></router-outlet>
 </div>
